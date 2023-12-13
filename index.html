@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One question for you</title>
+</head>
+<body>
+    <h1 id="main-heading">Do you hate me? <span id="main-heading-hindi">क्या आप मुझसे नफरत करते हैं?</span></h1>
+
+    <div id="options">
+        <button id="yes" onclick="showResponse('yes')">Yes</button>
+        <button id="no" onclick="showResponse('no')">No</button>
+    </div>
+
+    <div id="response" style="display:none;"></div>
+    
+    <style>
+        #main-heading {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #main-heading-hindi {
+            color: yellow;
+            background: #ff2a157d;
+            border-radius: 10px;
+            border: none;
+            display: flex;
+        }
+
+        #yes, #no {
+            color: red;
+            background: yellow;
+            font-size: 50px;
+            border: none;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        #ha, #nahi {
+            font-size: 30px;
+            font-weight: bold;
+            color: #0003ff;
+        }
+
+        #option {
+            display: flex;
+            align-items: center;
+        }
+
+        #background-emoji {
+            font-size: 100px;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        function showResponse(answer) {
+            const responseElement = document.getElementById('response');
+            const headingElement = document.getElementById('main-heading');
+            const headingElementHindi = document.getElementById('main-heading-hindi');
+            const optionsElement = document.getElementById('options');
+            const backgroundEmoji = document.getElementById('background-emoji');
+
+            optionsElement.style.display = 'none';
+            responseElement.style.display = 'block';
+            backgroundEmoji.style.display = 'none';
+
+            if (answer === 'yes') {
+                responseElement.innerHTML = '<p id="ha">🙄 Ohh.... thank you. I also hate you. 😏</p>';
+            } else if (answer === 'no') {
+                responseElement.innerHTML = '<p id="nahi">😈 But I hate you 😈</p>';
+            }
+        }
+    </script>
+    <div id="background-emoji">🤔</div>
+</body>
+</html>
